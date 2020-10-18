@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(login_id: session_params[:login_id])
-    if @user && @user.authenticate(session_params[:password])
+    @user = User.find_by(login_id: params[:session][:login_id])
+    if @user && @user.authenticate(params[:session][:password])
       log_in(@user)
       redirect_to @user
     else
@@ -13,11 +13,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-
-  end
-
-  private
-  def session_params
-    params.require(:sessions).permit(:login_id, :password, :name)
+    session.clear
+    current_user = nil
+    redirect_to login_path
   end
 end
