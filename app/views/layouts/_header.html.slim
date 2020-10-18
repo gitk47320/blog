@@ -1,0 +1,12 @@
+nav.navbar.navbar-fixed-top.navbar-expand-lg.navbar-light.bg-light
+  = link_to 'Your Blogs', '#', class: 'navbar-brand'
+  div.collapse.navbar-collapse.justify-content-end
+    ul.navbar-nav
+      li.nav-item.active
+        = link_to 'ログイン', login_path, class: 'nav-link'
+      li.nav-item.active
+        = link_to 'アカウントを作る', '#', class: 'nav-link'
+      li.nav-item.active
+        = link_to 'マイページ', '#', class: 'nav-link'
+      li.nav-item.active
+        = link_to 'ログアウト', '#', class: 'nav-link'
