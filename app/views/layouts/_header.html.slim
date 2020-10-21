@@ -2,11 +2,13 @@ nav.navbar.navbar-fixed-top.navbar-expand-lg.navbar-light.bg-light
   = link_to 'Your Blogs', '#', class: 'navbar-brand'
   div.collapse.navbar-collapse.justify-content-end
     ul.navbar-nav
-      li.nav-item.active
-        = link_to 'ログイン', login_path, class: 'nav-link'
-      li.nav-item.active
-        = link_to 'アカウントを作る', signup_path, class: 'nav-link'
-      li.nav-item.active
-        = link_to 'マイページ', user_path(@user), class: 'nav-link'
-      li.nav-item.active
-        = link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
+      - unless logged_in?
+        li.nav-item.active
+          = link_to 'ログイン', login_path, class: 'nav-link'
+        li.nav-item.active
+          = link_to 'アカウントを作る', signup_path, class: 'nav-link'
+      - else
+        li.nav-item.active
+          = link_to 'マイページ', user_path, class: 'nav-link'
+        li.nav-item.active
+          = link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
