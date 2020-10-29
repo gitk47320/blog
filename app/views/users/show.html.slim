@@ -1,4 +1,11 @@
-h1 Users#show
-p Find me in app/views/users/show.html.slim
-
-= button_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-primary'
+div.table-wrapper
+  table.table.table-striped
+    thead
+      tr
+        th '記事のタイトル'
+        th '投稿日'
+    tbody
+      - @posts.each do |post|
+        tr
+          td = link_to "#{post.title}", post_path
+          td = post.created_at
