@@ -12,3 +12,10 @@
     margin: 8px 0;
   }
 }
+
+.post-show {
+  @extend .post-card;
+  .post {
+    font-size: 20px;
+  }
+}
