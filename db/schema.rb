@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2020_10_29_133406) do
   enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.string "post"
+    t.string "title", null: false
+    t.string "post", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -25,10 +25,9 @@ ActiveRecord::Schema.define(version: 2020_10_29_133406) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "login_id"
-    t.string "name"
-    t.string "password_digest"
-    t.string "email"
+    t.string "login_id", null: false
+    t.string "password_digest", null: false
+    t.string "email", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
