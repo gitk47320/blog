@@ -2,9 +2,24 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   
   def show
-    @user = User.find_by(id: current_user.id)
+    @user = User.find(params[:id])
     @posts = @user.posts
   end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    if @user.save
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
 
   def new
     @user = User.new
