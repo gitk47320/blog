@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in(@user)
       # ユーザ作成後に、プロフィールを空レコードで作成しておく
       # Profilescontroller側での制御がなぜかうまくいかないため。
       # 気持ち悪いので後で対応する。
