@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_11_19_205730) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "nickname", null: false
+    t.string "nickname"
     t.integer "age"
     t.date "birthday"
     t.string "selfintro"
