@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       log_in(@user)
       # ユーザ作成後に、プロフィールを空レコードで作成しておく
       # Profilescontroller側での制御がなぜかうまくいかないため。
-      # 気持ち悪いので後で対応する。
+      #todo 気持ち悪いので後で対応する。
       @profile = @user.create_profile
       redirect_to @user
     else
