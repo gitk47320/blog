@@ -2,15 +2,16 @@ div.post-show
   h1 = @post.title
   div.post
     = @post.post
-  div.comment
-    = @post.comments
   div.comment-edit
-  - if current_user?
-    = form_with model: @comment, url: comments_path, method: :post do |f|
-      = f.label :comment, 'タイトル'
-      = f.text_area :comment, { size: '40x25',class: 'form-control' }
-      = f.submit 'コメントする', class: 'btn btn-primary'
   - if logged_in?
-    = link_to '戻る', user_path, class: 'btn btn-primary'
+    .mt-5
+    = form_with model: [@post, @comment], url: post_comments_path(@post.id), method: :post do |f|
+      = f.text_area :comment, { size: '10x10', class: 'form-control', placeholder: 'コメントを入力してください' }
+      = f.submit 'コメント投稿', class: 'btn btn-primary'
+    = link_to '戻る', user_path(current_user.id), class: 'btn btn-primary'
   - else
     = link_to '戻る', root_path, class: 'btn btn-primary'
+  div.mt-5.comment
+    h2 この記事へのコメント一覧
+    = @comments.each do |comment|
+      - comment.comment
