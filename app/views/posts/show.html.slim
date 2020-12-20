@@ -3,7 +3,7 @@ div.post-show
   div.post
     = @post.post
   div.comment-edit
-  - if logged_in?
+  - if logged_in? && @post.user_id != current_user.id
     .mt-5
     = form_with model: [@post, @comment], url: post_comments_path(@post.id), method: :post do |f|
       = f.text_area :comment, { size: '10x10', class: 'form-control', placeholder: 'コメントを入力してください' }
@@ -13,5 +13,8 @@ div.post-show
     = link_to '戻る', root_path, class: 'btn btn-primary'
   div.mt-5.comment
     h2 この記事へのコメント一覧
-    = @comments.each do |comment|
-      - comment.comment
+    - @comments.each do |comment|
+      div コメントした人
+        = comment.authorname
+      div
+        = comment.comment
