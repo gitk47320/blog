@@ -2,7 +2,7 @@ div.card
   h5.card-header
     プロフィール
   div.card-body
-    = form_with model: @profile, url: user_profile_path, method: :put ,local: true do |f|
+    = form_with model: @profile, url: user_profile_path, method: :put do |f|
       = f.label :nickname, 'ニックネーム'
       = f.text_field :nickname, { class: 'form-control' }
       / = f.label :birthday, '誕生日'

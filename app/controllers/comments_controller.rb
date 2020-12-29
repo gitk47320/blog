@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comments_params)
     @comment.authorname = User.find(current_user.id).profile.nickname
     if @comment.save
-      redirect_to post_path(@post.id)
+      redirect_to user_path(current_user.id)
     else
       redirect_to post_path(@post.id)
     end
