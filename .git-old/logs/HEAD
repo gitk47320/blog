@@ -1,0 +1,17 @@
+0000000000000000000000000000000000000000 b43d7bc53a4b5dde59ea94def8f791af2c2c5252 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1606637032 +0900	clone: from git@github.com:gitk47320/blog.git
+b43d7bc53a4b5dde59ea94def8f791af2c2c5252 b43d7bc53a4b5dde59ea94def8f791af2c2c5252 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1606637465 +0900	checkout: moving from master to feature/seed_data
+b43d7bc53a4b5dde59ea94def8f791af2c2c5252 edaded011aac4f0a902fbac550def5bf2972ccf8 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1606638677 +0900	commit: seed data
+edaded011aac4f0a902fbac550def5bf2972ccf8 c67850a70d852af43bf8993f026364ec55b494d9 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1607650388 +0900	commit: 微修正
+c67850a70d852af43bf8993f026364ec55b494d9 b43d7bc53a4b5dde59ea94def8f791af2c2c5252 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1607650447 +0900	checkout: moving from feature/seed_data to master
+b43d7bc53a4b5dde59ea94def8f791af2c2c5252 8c3233505a0d8320c23f7249c784fefc4b20d921 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1607650459 +0900	pull origin master: Fast-forward
+8c3233505a0d8320c23f7249c784fefc4b20d921 8c3233505a0d8320c23f7249c784fefc4b20d921 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1607650689 +0900	checkout: moving from master to feature/comment_#22
+8c3233505a0d8320c23f7249c784fefc4b20d921 8d6ed9f750cc3d1293c80d22f75f876876773df3 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1607651492 +0900	commit: add comment tabel migration file
+8d6ed9f750cc3d1293c80d22f75f876876773df3 6e46831a2fc05b4ce998497bd6a8721292e319a5 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1608367478 +0900	commit: コメント機能
+6e46831a2fc05b4ce998497bd6a8721292e319a5 41965f04bf84b1bfee66629f24a0047ccb23a18a gitk47320 <j.kashi.37204.privateuse@gmail.com> 1608428486 +0900	commit: 微修正
+41965f04bf84b1bfee66629f24a0047ccb23a18a 1187628ce577e89643942d792321250548d683f6 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1608428998 +0900	commit: コメント一覧のビュー修正
+1187628ce577e89643942d792321250548d683f6 fb1dc2fecfadf4bb3180878e5436e41bb002a94a gitk47320 <j.kashi.37204.privateuse@gmail.com> 1608430393 +0900	commit: ビュー修正
+fb1dc2fecfadf4bb3180878e5436e41bb002a94a fb1dc2fecfadf4bb3180878e5436e41bb002a94a gitk47320 <j.kashi.37204.privateuse@gmail.com> 1609059894 +0900	reset: moving to HEAD
+fb1dc2fecfadf4bb3180878e5436e41bb002a94a 8c3233505a0d8320c23f7249c784fefc4b20d921 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1609059912 +0900	checkout: moving from feature/comment_#22 to master
+8c3233505a0d8320c23f7249c784fefc4b20d921 80e9ac57e84e38a08ee7e5dfb2ecc63bd10b6ca3 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1609059919 +0900	pull origin master: Fast-forward
+80e9ac57e84e38a08ee7e5dfb2ecc63bd10b6ca3 80e9ac57e84e38a08ee7e5dfb2ecc63bd10b6ca3 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1609059939 +0900	checkout: moving from master to feature/issue_flash
+80e9ac57e84e38a08ee7e5dfb2ecc63bd10b6ca3 7b03082733063d37c14051e890314c5dd22ccdf1 gitk47320 <j.kashi.37204.privateuse@gmail.com> 1609063886 +0900	commit: フラッシュメッセージのベース作成
