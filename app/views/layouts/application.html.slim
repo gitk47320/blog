@@ -9,4 +9,6 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
     = render 'layouts/header'
+    - flash.each do |type, message|
+      = content_tag(:div, message, class: "alert alert-#{type}")
     = yield
