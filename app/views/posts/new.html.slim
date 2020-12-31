@@ -2,6 +2,7 @@ div.post-card
   h2 記事作成
   div.card-body
     = form_with model: @post, url: posts_path, method: :post, local: true do |f|
+      = render 'layouts/error_messages', model: f.object
       = f.label :title, 'タイトル'
       = f.text_field :title, { class: 'form-control' }
       = f.label :post, '記事'

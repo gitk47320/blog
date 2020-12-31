@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   def create
     @user = User.find(current_user.id)
     @post = @user.posts.build(post_params)
-    if @post.save!
+    if @post.save
       redirect_to user_path(current_user.id)
     else
       render :new

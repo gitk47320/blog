@@ -1,0 +1,4 @@
+- if model.errors.any?
+  div.alert.alert-danger
+    - model.errors.full_messages.each do |msg|
+      = msg
