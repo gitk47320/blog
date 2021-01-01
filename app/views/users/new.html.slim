@@ -2,7 +2,8 @@ div.card
   h5.card-header
     アカウント新規登録
   div.card-body
-    = form_with model: @user, url: signup_path do |f|
+    = form_with model: @user, url: signup_path, local: true do |f|
+      = render 'layouts/error_messages', model: f.object
       = f.label :email, 'メールアドレス'
       = f.text_field :email, { class: 'form-control' }
       = f.label :login_id, 'ログインID'
