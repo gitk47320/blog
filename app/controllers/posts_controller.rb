@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @user = User.find(current_user.id)
     @post = @user.posts.build(post_params)
     if @post.save
-      redirect_to user_path(current_user.id)
+      redirect_to user_path(current_user.id), flash: { success: '記事を投稿しました。' }
     else
       render :new
     end
