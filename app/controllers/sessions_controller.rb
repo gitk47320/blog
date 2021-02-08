@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(login_id: params[:session][:login_id])
     if @user && @user.authenticate(params[:session][:password])
       log_in(@user)
-      redirect_to @user, flash: { success: 'ログインしました' }
+      redirect_to @user, flash: { success: t('flash.session.create') }
     else
       flash.now[:danger] = 'IDまたはパスワードが不正のためログインできませんでした'
       render :new
@@ -16,6 +16,6 @@ class SessionsController < ApplicationController
   def destroy
     session.clear
     current_user = nil
-    redirect_to login_path, flash: { success: 'ログアウトしました' }
+    redirect_to login_path, flash: { success: t('flash.session.destroy') }
   end
 end

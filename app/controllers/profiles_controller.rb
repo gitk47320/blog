@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = User.find(params[:user_id]).build_profile(profile_params)
     if @profile.save
-      redirect_to user_path(current_user.id)
+      redirect_to user_path(current_user.id), flash: { success: t('flash.profile.update') }
     else
       render :edit
     end

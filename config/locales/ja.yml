@@ -14,3 +14,17 @@ ja:
         email: メールアドレス
         login_id: ログインID
         password: パスワード
+  flash:
+    session:
+      create: ログインしました
+      destroy: ログアウトしました
+    post:
+      create: 記事を投稿しました
+      update: 記事を編集しました
+    profile:
+      update: プロフィールを編集しました
+    comment:
+      create: コメントに成功しました
+    user:
+      create: ユーザアカウントを作成しました
+      update: ユーザアカウントを編集しました

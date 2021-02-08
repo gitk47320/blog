@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     if @user.save
-      redirect_to @user
+      redirect_to @user, flash: { success: t('flash.user.update') }
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       # Profilescontroller側での制御がなぜかうまくいかないため。
       #todo 気持ち悪いので後で対応する。
       @profile = @user.create_profile
-      redirect_to @user
+      redirect_to @user, flash: { success: t('flash.user.create') }
     else
       render :new
     end
