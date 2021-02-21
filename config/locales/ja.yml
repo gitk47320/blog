@@ -14,6 +14,9 @@ ja:
         email: メールアドレス
         login_id: ログインID
         password: パスワード
+      comment:
+        authorname: ユーザ名
+        comment: コメント
   flash:
     session:
       create: ログインしました
