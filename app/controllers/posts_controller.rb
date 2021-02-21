@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments
-    logger.debug("aaaaaaaaaaaa#{@comments.present?}")
     @comment = @post.comments.build
   end
 
