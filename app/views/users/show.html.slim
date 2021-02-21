@@ -1,10 +1,10 @@
 div.user-show
   div.card
     h5.card-header
-      プロフィール
+      | あなたの#{Profile.model_name.human}
     div.card-body
-      名前
-    = link_to 'プロフィール編集', edit_user_profile_path(@user.id)
+      | 名前
+    = link_to "#{Profile.model_name.human}編集", edit_user_profile_path(@user.id)
   h2 あなたが投稿したブログ一覧
   table.table.table-striped
     thead

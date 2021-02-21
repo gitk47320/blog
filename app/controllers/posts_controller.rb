@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments
+    logger.debug("aaaaaaaaaaaa#{@comments.present?}")
     @comment = @post.comments.build
   end
 
@@ -15,7 +16,7 @@ class PostsController < ApplicationController
     @user = User.find(current_user.id)
     @post = @user.posts.build(post_params)
     if @post.save
-      redirect_to user_path(current_user.id), flash: { success: '記事を投稿しました。' }
+      redirect_to user_path(current_user.id), flash: { success: t('flash.post.create') }
     else
       render :new
     end
