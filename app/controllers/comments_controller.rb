@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to user_path(current_user.id), flash: { success: t('flash.comment.create')}
     else
+      @error_comment = @comment.comment
       redirect_to post_path(@post.id)
     end
   end
