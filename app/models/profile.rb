@@ -5,4 +5,5 @@ class Profile < ApplicationRecord
                          format: { with: VALID_HALFWIDTH_CHARACTERS }, 
                          uniqueness: { case_sensitive: false }
                        }
+  validates :selfintro, length: { maximum: 1000 } 
 end
