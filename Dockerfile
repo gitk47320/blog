@@ -4,9 +4,9 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 RUN apt-get update -qq && \
     apt-get install -y build-essential \
     libpq-dev \
-    nodejs \
     yarn
-# 以下time_managerは好きな名前に変更してください
+
+RUN apt-get install -y nodejs npm && npm install n -g && n 14.21.0
 
 RUN apt-get update && apt-get install -y unzip && \
     CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE` && \
