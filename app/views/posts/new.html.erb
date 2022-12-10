@@ -1,0 +1,13 @@
+<div class="post-card">
+  <h2><%= Post.model_name.human %>作成</h2>
+  <div class="card-body">
+    <%= form_with model: @post, url: posts_path, method: :post, local: true do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %> 
+      <%= f.label :title, Post.human_attribute_name(:title) %>
+      <%= f.text_field :title, { class: 'form-control' } %> 
+      <%= f.label :post, Post.human_attribute_name(:post) %>
+      <%= f.text_area :post, { size: '40x25',class: 'form-control' } %>
+      <%= f.submit '投稿する', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

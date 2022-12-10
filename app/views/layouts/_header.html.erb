@@ -1,0 +1,25 @@
+<nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-light">
+  <%= link_to 'Your Blogs', root_path, class: 'navbar-brand' %>
+  <div class="collapse navbar-collapse justify-content-end">
+    <ul class="navbar-nav">
+      <% unless logged_in?%>
+        <li class="nav-item active">
+          <%= link_to 'ログイン', login_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to 'アカウントを作る', signup_path, class: 'nav-link' %>
+        </li>
+          <% else %>
+        <li class="nav-item active">
+          <%= link_to 'マイページ', user_path(current_user.id), class: 'nav-link' %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to '投稿する', new_post_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to 'ログアウト', logout_path, class: 'nav-link', data: { turbo_method: :delete } %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

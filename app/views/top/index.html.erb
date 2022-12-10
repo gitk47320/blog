@@ -1,0 +1,22 @@
+<div class="top-wrapper">
+  <h1 class="mt-3 mb-3">ようこそYour Blogサイトへ</h1>
+<div>このサイトについてはこちら</div>
+
+<h2 class="mt-3 mb-3">最近投稿されたブログ一覧</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>記事のタイトル</th>
+        <th>投稿日</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to "#{post.title}", post_path(post.id) %></td>
+          <td><%= post.created_at.in_time_zone('Tokyo').strftime("%Y-%m-%d") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -67,3 +67,4 @@ gem 'hotwire-rails'
 
 gem "jsbundling-rails"
 gem "cssbundling-rails"
+gem 'slim-rails'

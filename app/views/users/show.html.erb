@@ -1,0 +1,27 @@
+<div class="user-show">
+  <div class="card">
+    <h5 class="card-header">あなたの<%= Profile.model_name.human %></h5>
+    <div class="card-body">
+      名前
+    </div>
+    <%= link_to "#{Profile.model_name.human}編集", edit_user_profile_path(@user.id) %>
+  </div>
+  
+  <h2>あなたが投稿したブログ一覧</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>記事のタイトル</th>
+          <th>投稿日</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to "#{post.title}", post_path(post.id) %></td>
+          <td><%= post.created_at.in_time_zone('Tokyo').strftime("%Y-%m-%d") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

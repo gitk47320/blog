@@ -1,0 +1,27 @@
+<div class="post-show">
+  <h1><%= @post.title %></h1>
+  <div class="post">
+    <%= @post.post %>
+  </div>
+  <div class="comment-edit">
+    <% if logged_in? %>
+      <% if @post.user_id != current_user.id %>
+        <%= form_with model: [@post, @comment], url: post_comments_path(@post.id), local: true do |f| %>
+          <%= f.text_area :comment, { size: '10x10', class: 'form-control', placeholder: 'コメントを入力してください' } %>
+          <%= f.submit 'コメント投稿', class: 'btn btn-primary' %>
+        <% end %>
+        <%= link_to '戻る', user_path(current_user.id), class: 'btn btn-primary' %>
+      <% else %>
+        <%= link_to '戻る', root_path, class: 'btn btn-primary' %>
+      <% end %>
+    <% end %>
+    <h3 class="mt-5 comment">コメント一覧</h3>
+      <% if @comments.exists? %>
+        <% @comments.each do |c| %>
+          <strong><%= c.authorname %></strong>
+          <% c.comment %>
+        <% end %>
+      <% else %>
+        コメントはありません
+      <% end %>
+  </div>

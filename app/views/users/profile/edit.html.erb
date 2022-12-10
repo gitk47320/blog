@@ -1,0 +1,12 @@
+<div class="card">
+<h5 class="card-header"><h5>
+<div class="card-body">
+  <%= form_with model: @profile, url: user_profile_path, method: :put do |f| %>
+    <%= f.label :nickname, 'ニックネーム' %>
+    <%= f.text_field :nickname, { class: 'form-control' } %> 
+    <%= f.label :selfintro,'自己紹介' %>
+    <%= f.text_area :selfintro, { size: '25x20', class: 'form-control' } %>
+    <%= f.submit '更新', class: 'btn btn-primary' %> 
+    <% end %>
+  <%= link_to '戻る', user_path(@user.id), class: 'btn btn-primary' %>
+</div>
